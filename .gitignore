@@ -1,0 +1,8 @@
+
+.venv/
+# python caches
+__pycache__/
+*.pyc
+
+# binary junk
+.DS_Store

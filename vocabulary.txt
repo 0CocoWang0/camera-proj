@@ -1,0 +1,15 @@
+MediaPipe: an open-source framework developed by Google used for building cross-platform, real-time machine learning (ML) pipelines.
+It allows developers to easily process streaming media, such as video, audio, and sensor data, directly on consumer hardware without relying on cloud servers
+- Computer Vision: MediaPipe Hands, Face Mesh, Pose Estimation
+- On-Device Efficiency
+
+uv: a extremely fast python package and project manager, written in Rust
+can use it to replace pip, pip-tools, etc
+- uv init: create a new python project
+- uv add <package>: add a dependency to the project
+- uv run <script.py>: run a script using the project environment
+- uvx <tool>: run a python tool without permantly installing It
+
+python -c "print(2**10)"
+-c flag stands for "command" -> tells python to execute the code passed directly as a string, instead of a .py file
+for quick check purpose
