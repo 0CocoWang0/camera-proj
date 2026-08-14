@@ -1,7 +1,10 @@
 import cv2;
+import time;
+from pathlib import Path;
 
-
-cap = cv2.VideoCapture(0)
+# connected to iphone camera
+cap = cv2.VideoCapture(1)
+saveTo = Path(__file__).parent/"captures"
 while True:
     ret, frame = cap.read()
     #ret = return value. did this operation actually work? 
@@ -9,10 +12,16 @@ while True:
         break
     cv2.imshow("frameeeeeeeeee plez", frame)
     
-    # press q to exit
-    if cv2.waitKey(1) & 0xFF == ord('q'): # 0xff and ord are used together to look for a specific key press
-        break 
-    # if no 1 inside waitKey, it will wait indefinitely until a key is pressed -> freeze the vid on the very first frame
-    
+    # one waitkey call. opens the envolpe and take whatever is inside and trim it
+    key = cv2.waitKey(1) & 0xFF
+    # ord getting numeric value
+    if key == ord('q'):
+        print("pressed q")
+        break
+    elif key == ord(' '):
+        print("pressed space bar")
+        shot = cv2.imwrite(f"{saveTo/time.strftime("%Y-%m-%d-%H%M%S", time.localtime())}.png",frame)
+        print(str(shot))
+        
 cap.release() # release the camera
 cv2.destroyAllWindows() # destroy all windows
