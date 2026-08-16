@@ -7,4 +7,4 @@ __pycache__/
 # binary junk
 .DS_Store
 practice*
-captures/
+captures*
